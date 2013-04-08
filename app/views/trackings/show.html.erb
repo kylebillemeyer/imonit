@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= @tracking.item_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @tracking.group_id %>
+</p>
+
+<p>
+  <b>Threshold:</b>
+  <%= @tracking.threshold %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @tracking.count %>
+</p>
+
+<p>
+  <b>Total estimated cost:</b>
+  <%= @tracking.total_estimated_cost %>
+</p>
+
+<p>
+  <b>Tenant on it:</b>
+  <%= @tracking.tenant_on_it %>
+</p>
+
+
+<%= link_to 'Edit', edit_tracking_path(@tracking) %> |
+<%= link_to 'Back', trackings_path %>

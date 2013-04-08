@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_id: 1
+  group_id: 1
+  threshold: 1.5
+  count: 1.5
+  total_estimated_cost: 1.5
+  tenant_on_it: 1
+
+two:
+  item_id: 1
+  group_id: 1
+  threshold: 1.5
+  count: 1.5
+  total_estimated_cost: 1.5
+  tenant_on_it: 1

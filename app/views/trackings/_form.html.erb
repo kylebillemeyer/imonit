@@ -1,0 +1,41 @@
+<%= form_for(@tracking) do |f| %>
+  <% if @tracking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tracking.errors.count, "error") %> prohibited this tracking from being saved:</h2>
+
+      <ul>
+      <% @tracking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %><br />
+    <%= f.number_field :item_id %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.number_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :threshold %><br />
+    <%= f.text_field :threshold %>
+  </div>
+  <div class="field">
+    <%= f.label :count %><br />
+    <%= f.text_field :count %>
+  </div>
+  <div class="field">
+    <%= f.label :total_estimated_cost %><br />
+    <%= f.text_field :total_estimated_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :tenant_on_it %><br />
+    <%= f.number_field :tenant_on_it %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Listing trackings</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Group</th>
+    <th>Threshold</th>
+    <th>Count</th>
+    <th>Total estimated cost</th>
+    <th>Tenant on it</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trackings.each do |tracking| %>
+  <tr>
+    <td><%= tracking.item_id %></td>
+    <td><%= tracking.group_id %></td>
+    <td><%= tracking.threshold %></td>
+    <td><%= tracking.count %></td>
+    <td><%= tracking.total_estimated_cost %></td>
+    <td><%= tracking.tenant_on_it %></td>
+    <td><%= link_to 'Show', tracking %></td>
+    <td><%= link_to 'Edit', edit_tracking_path(tracking) %></td>
+    <td><%= link_to 'Destroy', tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tracking', new_tracking_path %>
