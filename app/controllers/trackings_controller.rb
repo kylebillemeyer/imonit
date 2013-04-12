@@ -80,4 +80,13 @@ class TrackingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #PUT /trackings/1/sub
+  def sub
+    @tracking = Tracking.find(params[:id])
+    count = [0, @tracking.count - 1].max
+    @tracking.update_attributes(:count => count)
+
+    head :ok
+  end
 end

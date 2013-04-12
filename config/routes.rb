@@ -2,6 +2,7 @@ Imonit::Application.routes.draw do
   resources :subscriptions
 
 
+  match "/trackings/:id/sub" => "trackings#sub", :via => :put
   resources :trackings
 
 
@@ -12,6 +13,7 @@ Imonit::Application.routes.draw do
 
 
   resources :users
+
 
   match "/my_group" => "my_group#index"
 
