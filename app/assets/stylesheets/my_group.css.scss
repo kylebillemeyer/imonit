@@ -1,0 +1,175 @@
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* styles */
+
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.imonit {
+	width: 320px;
+	height: 480px;
+	background: #fff;
+	border: 1px solid #000;
+	position: relative;
+}
+
+.head {
+	width: 100%;
+	height: 40px;
+	background: #0374b5;
+	position: absolute;
+	top: 0;
+}
+
+	h1 {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: 30px;
+		margin: 1.5% 27.5%;
+		color: #fff;
+	}
+	
+.nav {
+	width: 100%;
+	float: left;
+	margin-top: 40px;
+	padding: 5px 0;
+	border-bottom: 1px solid #000;
+}
+
+	.nav li {
+		display: inline;
+		font-weight: 700;
+		text-transform: lowercase;
+		padding: 0 15px;
+		font-size: 12px;
+	}
+	
+		.nav li a {
+			text-decoration: none;
+			color: #888888;
+		}
+		
+			.nav li a:hover {
+				color: #000;
+			}
+			
+.person {
+	width: 100%;
+	height: 30px;
+	float: left;
+	padding: 25px 12px;
+}
+
+	.icon {
+		width: 30px;
+		height: 30px;
+		border-radius: 15px;
+		background: #0374b5;
+		float: left;
+	}
+	
+	.balanceRed {
+		float: left;
+		width: 200px;
+		height: 12px;
+		border-radius: 2.5px;
+		border: 1px solid #333333;
+		margin: 7.5px 12.5px;
+	}
+	
+	.balanceGreen {
+		float: left;
+		width: 200px;
+		height: 12.5px;
+		border-radius: 2.5px;
+		border: 1px solid #333333;
+		margin: 7.5px 12.5px;
+	}
+	
+	.amountRed {
+		float: left;
+		font-size: 16px;
+		font-weight: 700;
+		margin-top: 5px;
+		color: #ee3234;
+	}
+	
+	.amountGreen {
+		float: left;
+		font-size: 16px;
+		font-weight: 700;
+		margin-top: 5px;
+		color: #72b743;
+	}
+	
+	.links {
+		clear: both;
+		float: left;
+		margin-left: 42.5px;
+	}
+	
+		.links li {
+			display: inline;
+		}
+		
+			.links li a {
+				font-size: 10px;
+				text-decoration: none;
+				color: #888888;
+				margin-right: 12.5px;
+			}
+			
+				.links li a:hover {
+					color: #000;
+				}
+				
+.foot {
+	float: left;
+	position: absolute;
+	bottom: -2px;
+}

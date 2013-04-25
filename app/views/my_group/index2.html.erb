@@ -1,0 +1,46 @@
+<h1>My Group</h1>
+
+<p><%= @group.description %></p>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Measurement</th>
+    <th>Count</th>
+    <th>Threshold Before Replacement</th>
+    <th>Estimated Replacement Cost</th>
+    <th>Status</th>
+  </tr>
+
+  <% @trackings.each do |tracking| %>
+  <tr>
+    <td><%= tracking.item.name %></td>
+    <td><%= tracking.item.description %></td>
+    <td><%= tracking.item.measurement %></td>
+    <td><%= tracking.count %></td>
+    <td><%= tracking.threshold %></td>
+    <td><%= tracking.total_estimated_cost %></td>
+    <td><%= 
+      if tracking.count >= tracking.threshold
+        'Ok'
+      elsif tracking.tenant_on_it.nil?
+        'On It'
+      else
+        'Needs Replacement' 
+      end%>
+      </td>
+  </tr>
+<% end %>
+</table>
+
+<h3>Group Members</h3>
+<ul>
+<% @members.each do |member| %>
+  <li><%= member.name %></li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Debt Board', new_group_path %>

@@ -1,46 +1,66 @@
-<h1>My Group</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>I&#39;m On It</title>
+  <%= stylesheet_link_tag "my_group" %>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
 
-<p><%= @group.description %></p>
+<body>
 
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Description</th>
-    <th>Measurement</th>
-    <th>Count</th>
-    <th>Threshold Before Replacement</th>
-    <th>Estimated Replacement Cost</th>
-    <th>Status</th>
-  </tr>
+<div class="imonit">
+	<header class="head">
+		<h1>i&#39;m on it</h1>
+	</header>
+	
+	<ul class="nav">
+		<li><a href="#"><%= image_tag("settings.png") %></a></li>
+		<li><a href="#">Money</a></li>
+		<li><a href="#">Inventory</a></li>
+		<li><a href="#">Lists</a></li>
+	</ul>
+	
+	<% @trackings.each do |tracking| %>
+		<section class="person">
 
-  <% @trackings.each do |tracking| %>
-  <tr>
-    <td><%= tracking.item.name %></td>
-    <td><%= tracking.item.description %></td>
-    <td><%= tracking.item.measurement %></td>
-    <td><%= tracking.count %></td>
-    <td><%= tracking.threshold %></td>
-    <td><%= tracking.total_estimated_cost %></td>
-    <td><%= 
-      if tracking.count >= tracking.threshold
-        'Ok'
-      elsif tracking.tenant_on_it.nil?
-        'On It'
-      else
-        'Needs Replacement' 
-      end%>
-      </td>
-  </tr>
-<% end %>
-</table>
+			<div>
+				<%= tracking.item.name %>
+			</div>
 
-<h3>Group Members</h3>
-<ul>
-<% @members.each do |member| %>
-  <li><%= member.name %></li>
-<% end %>
-</ul>
+			<div class="icon">
+			</div>
 
-<br />
+			<% if tracking.count < tracking.threshold %>
+				<div class="balanceRed">
+				</div>
+				
+				<div class="amountRed">
+					<%= tracking.count %>
+				</div>
+			<% else %>
+				<div class="balanceGreen">
+				</div>
+				
+				<div class="amountGreen">
+					<%= tracking.count %>
+				</div> 
+			<% end %>			
+			
+			<ul class="links">
+				<li><a href="#">Subscriptions</a></li>
+				<li><a href="#">History</a></li>
+				<li><a href="#">Make Payment</a></li>
+			</ul>
+		</section>
+	<% end %>
 
-<%= link_to 'Debt Board', new_group_path %>
+	<section class="foot">
+		<%= image_tag("scott.jpg") %>
+	</section>
+	
+</div>
+
+</body>
+
+</html>
