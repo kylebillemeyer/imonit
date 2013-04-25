@@ -2,7 +2,7 @@ Imonit::Application.routes.draw do
   resources :subscriptions
 
 
-  match "/trackings/:id/sub" => "trackings#sub", :via => :put
+  match "/trackings/:id/sub" => "trackings#sub", :as => 'sub', :via => :put
   resources :trackings
 
 
